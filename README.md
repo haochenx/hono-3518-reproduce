@@ -2,6 +2,8 @@ Reproduction repository for https://github.com/honojs/hono/issues/3518
 
 ## Reproduce steps:
 
+### original (as reported by @haochenx)
+
 ```bash
 bun --version
 # output: 1.1.32
@@ -12,7 +14,18 @@ bun run dev &
 curl --compressed -v localhost:5173/api/hello
 ```
 
-the last command gives the following result:
+### minimal (as suggested by @yusukebe)
+
+```bash
+bun run src/minimal.ts &
+
+## better in another window
+curl --compressed -v localhost:3000/
+```
+
+### output
+
+the last command will give (something like) the following result:
 
 ```
 * Host localhost:5173 was resolved.
